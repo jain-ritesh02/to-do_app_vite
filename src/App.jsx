@@ -39,7 +39,7 @@ if (tasks.length > 0) {
             <div className="one">
             <div onClick={(e) => CompleteTaskToggle(e,index)} className={` min-circle ${
                                 task.completed ? "bg-green-500" : "border"
-                            } `} ></div>
+                            } cursor-pointer `} ></div>
             <h2 className={`${
                                 task.completed && "line-through"
                             } `}>{task.title}</h2>
