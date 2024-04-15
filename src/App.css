@@ -141,8 +141,6 @@ button i{
   /* background-color: green; */
 }
 
-
-
 .icon{
   display: flex;
   align-items: center;
@@ -152,4 +150,12 @@ button i{
 .icon i{
   font-size: 20px;
   cursor: pointer;
+}
+
+.icon i:active{
+  scale: 1.15;
+}
+
+.icon i:hover{
+  color: white;
 }
