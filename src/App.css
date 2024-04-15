@@ -145,6 +145,7 @@ button i{
   display: flex;
   align-items: center;
   gap: 10px;
+  transition: all ease 1s;
 }
 
 .icon i{

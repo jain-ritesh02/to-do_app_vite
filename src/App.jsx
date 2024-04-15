@@ -18,7 +18,7 @@ const App = () => {
 
   const deleteHandler = (i) => {
     const copyTasks = [...tasks];
-    let isValid = true;
+    let isValid = false;
     if(!copyTasks[i].completed){
       isValid = confirm( "Are you sure you want to delete this task?")
     }
