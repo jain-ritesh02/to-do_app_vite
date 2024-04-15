@@ -4,9 +4,7 @@ import './index.css'
 
 const App = () => {
 
-  const [tasks, settasks] = useState([
-
-  ])
+  const [tasks, settasks] = useState([])
   const [title, settitle] = useState("")
 
   const submitHandler = (e) => {
@@ -18,7 +16,21 @@ const App = () => {
     settitle("");
   }
 
-  const CompleteTaskToggle = (e, i) => {
+  const deleteHandler = (i) => {
+    const copyTasks = [...tasks];
+    let isValid = true;
+    if(!copyTasks[i].completed){
+      isValid = confirm( "Are you sure you want to delete this task?")
+    }
+
+    if(isValid || copyTasks[i].completed) {
+      copyTasks.splice(i, 1);
+      settasks(copyTasks);
+    }
+
+  }
+
+  const CompleteTaskToggle = (i) => {
 
     const copyTasks = [...tasks];
     copyTasks[i].completed = !tasks[i].completed;
@@ -26,8 +38,8 @@ const App = () => {
 };
 
 let tasksrender = (
-  <h2 className="text-center text-orange-700 mr-[10%] text-2xl">
-      No Pending Tasks ...
+  <h2 className="text-center text-orange-800 mr-[10%] text-2xl">
+      No Pending Tasks ... 
   </h2>
 );
 
@@ -37,7 +49,7 @@ if (tasks.length > 0) {
       <li key={index}>
         <div className="task">
             <div className="one">
-            <div onClick={(e) => CompleteTaskToggle(e,index)} className={` min-circle ${
+            <div onClick={() => CompleteTaskToggle(index)} className={`min-circle ${
                                 task.completed ? "bg-green-500" : "border"
                             } cursor-pointer `} ></div>
             <h2 className={`${
@@ -46,7 +58,7 @@ if (tasks.length > 0) {
             </div>
             <div className="icon">
             <i className="ri-edit-box-line"></i>
-            <i className="ri-delete-bin-6-line"></i>
+            <i onClick={()=> deleteHandler(index)} className="ri-delete-bin-6-line"></i>
             </div>
           </div>
       </li>
