@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
+import { todocontext } from '../src/Context/Contexts'
 
-const Create = (props) => {
+const Create = () => {
 
-    const {tasks, settasks} = props
+    const [tasks, settasks] = useContext(todocontext)
 
     const [title, settitle] = useState("")
 

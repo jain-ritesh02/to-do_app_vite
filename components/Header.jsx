@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { todocontext } from '../src/Context/Contexts'
 
-const Header = (props) => {
-    // const tasks = props.tasks
-    const {tasks} = props
+const Header = () => {
+  const [tasks] = useContext(todocontext)
   return (
     <div className="to-do">
     <div className="text">

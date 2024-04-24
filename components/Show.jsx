@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { todocontext } from '../src/Context/Contexts';
 
 const Show = (props) => {
 
-    const {tasks,settasks} = props
+    const [tasks,settasks] = useContext(todocontext)
 
     const deleteHandler = (i) => {
         const copyTasks = [...tasks];

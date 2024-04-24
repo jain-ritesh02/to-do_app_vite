@@ -13,11 +13,11 @@ const App = () => {
     <>
      <div id="main">
       <div className="container">
-        <Header tasks = {tasks}/>
+        <Header/>
 
-        <Create tasks = {tasks} settasks = {settasks}/>
+        <Create/>
 
-        <Show tasks = {tasks} settasks = {settasks}/>
+        <Show/>
 
       </div>
      </div>
